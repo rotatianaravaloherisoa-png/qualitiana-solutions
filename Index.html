@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QualiTiana Solutions | Qualité • Formation • Performance • Expérience Client</title>
+
+    <!-- Google Font : Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --blue-dark: #073B66;
+            --blue: #0A5A9C;
+            --blue-light: #EAF4FB;
+            --blue-soft: #F4F9FC;
+            --white: #FFFFFF;
+            --text: #253746;
+            --text-light: #667786;
+            --border: #DCE8F0;
+            --shadow: 0 12px 35px rgba(7, 59, 102, 0.10);
+            --radius: 18px;
+        }
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 82px;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1250px;
+            height: 100%;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img {
+            width: 145px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        .contact-button {
+            background: var(--blue);
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 30px;
+        }
+
+        .contact-button:hover {
+            background: var(--blue-dark);
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 25px 90px;
+
+            background:
+                radial-gradient(circle at 80% 20%, #DDEFFC, transparent 35%),
+                linear-gradient(135deg, #F8FCFF, #FFFFFF);
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1250px;
+            width: 100%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 1.08;
+            color: var(--blue-dark);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .tagline {
+            font-size: 19px;
+            color: var(--blue);
+            font-weight: 600;
+            margin-bottom: 35px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--text-light);
+            max-width: 700px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--blue);
+            color: var(--blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--blue-light);
+        }
+
+        /* =====================================================
+           IMAGE CARDS
+        ===================================================== */
+
+        .visual {
+            min-height: 460px;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            background: #DCECF7;
+        }
+
+        .visual img {
+            width: 100%;
+            height: 100%;
+            min-height: 460px;
+            object-fit: cover;
+        }
+
+        .visual-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(7,59,102,0.02),
+                    rgba(7,59,102,0.35)
+                );
+        }
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.15;
+            color: var(--blue-dark);
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .principle {
+            margin-top: 30px;
+            padding: 25px;
+            border-left: 4px solid var(--blue);
+            background: var(--blue-soft);
+            border-radius: 0 15px 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--blue-dark);
+        }
+
+        /* =====================================================
+           DOMAINS
+        ===================================================== */
+
+        .domains {
+            background: var(--blue-soft);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 5px 20px rgba(7,59,102,0.04);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            background: var(--blue-light);
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            color: var(--blue-dark);
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            margin: 8px 0;
+            color: var(--text-light);
+            font-size: 14px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--blue);
+            font-weight: bold;
+        }
+
+        /* =====================================================
+           TARGET
+        ===================================================== */
+
+        .target-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+        }
+
+        .target-card {
+            padding: 35px;
+            background: var(--blue-soft);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .target-card h3 {
+            color: var(--blue-dark);
+            margin-bottom: 15px;
+        }
+
+        .target-card li {
+            margin: 8px 0;
+            color: var(--text-light);
+        }
+
+        /* =====================================================
+           APPROACH
+        ===================================================== */
+
+        .approach {
+            background: var(--blue-soft);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        .step {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border-top: 4px solid var(--blue);
+            box-shadow: 0 8px 25px rgba(7,59,102,0.06);
+        }
+
+        .step-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: #C9E2F3;
+        }
+
+        .step h3 {
+            color: var(--blue-dark);
+            margin: 8px 0 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* =====================================================
+           OFFERS
+        ===================================================== */
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .offer {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            background: white;
+        }
+
+        .offer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--blue);
+        }
+
+        .offer-number {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .offer h3 {
+            margin: 12px 0 18px;
+            color: var(--blue-dark);
+        }
+
+        .offer ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .offer li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .offer li::before {
+            content: "✓";
+            color: var(--blue);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .objective {
+            background: var(--blue-light);
+            padding: 15px;
+            border-radius: 10px;
+            color: var(--blue-dark);
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           DIFFERENTIATION
+        ===================================================== */
+
+        .difference {
+            background: var(--blue-dark);
+            color: white;
+        }
+
+        .difference h2,
+        .difference .section-label {
+            color: white;
+        }
+
+        .difference-text {
+            max-width: 850px;
+        }
+
+        .chain {
+            margin: 45px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .chain span {
+            padding: 13px 20px;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 30px;
+            background: rgba(255,255,255,0.08);
+            font-weight: 600;
+        }
+
+        .causes {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .cause {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 18px;
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           FINAL CONTACT
+        ===================================================== */
+
+        .contact {
+            text-align: center;
+            background: var(--blue-soft);
+        }
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .contact-box p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #052D4E;
+            color: rgba(255,255,255,0.75);
+            padding: 45px 25px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .footer-brand {
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .footer-small {
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero-container,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards,
+            .target-grid,
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .causes {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .visual {
+                min-height: 300px;
+            }
+
+            .visual img {
+                min-height: 300px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <div class="header-container">
+
+        <a href="#accueil" class="brand">
+
+            <!-- REMPLACER logo.png PAR TON LOGO -->
+            <img src="logo.png" alt="QualiTiana Solutions">
+
+        </a>
+
+        <nav>
+
+            <a href="#accueil">Accueil</a>
+            <a href="#qui-sommes-nous">Qui sommes-nous ?</a>
+            <a href="#domaines">Domaines</a>
+            <a href="#approche">Notre approche</a>
+            <a href="#offres">Nos offres</a>
+            <a href="#difference">Nos différences</a>
+
+            <a href="#contact" class="contact-button">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     PAGE / SECTION 1
+========================================================= -->
+
+<section class="hero" id="accueil">
+
+    <div class="hero-container">
+
+        <div>
+
+            <div class="section-label">
+                QualiTiana Solutions
+            </div>
+
+            <h1>
+                QUALITIANA<br>
+                SOLUTIONS
+            </h1>
+
+            <div class="tagline">
+                Qualité • Formation • Performance • Expérience Client
+            </div>
+
+            <p>
+                Une structure d'accompagnement destinée aux entreprises
+                qui souhaitent améliorer la qualité de leurs opérations,
+                développer les compétences de leurs équipes et renforcer
+                leur performance ainsi que leur expérience client.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#qui-sommes-nous" class="btn btn-primary">
+                    Découvrir QualiTiana
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Nous contacter
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- IMAGE EQUIPE -->
+
+        <div class="visual">
+
+            <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
+                alt="Équipe professionnelle en accompagnement"
+            >
+
+            <div class="visual-overlay"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 1 — QUI SOMMES-NOUS
+========================================================= -->
+
+<section class="about" id="qui-sommes-nous">
+
+    <div class="section-container">
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    Notre identité
+                </div>
+
+                <h2>
+                    Qui sommes-nous ?
+                </h2>
+
+                <p>
+                    QualiTiana Solutions est une structure d’accompagnement
+                    destinée aux entreprises qui souhaitent améliorer la
+                    qualité de leurs opérations, développer les compétences
+                    de leurs équipes et renforcer leur performance ainsi
+                    que leur expérience client.
+                </p>
+
+                <p>
+                    Nous intervenons principalement auprès des entreprises
+                    disposant d'équipes commerciales, de relation client,
+                    de gestion ou de services à distance.
+                </p>
+
+                <p>
+                    Notre objectif n'est pas uniquement de contrôler la
+                    qualité, mais de comprendre les causes des écarts,
+                    accompagner les équipes et transformer les constats
+                    en actions concrètes.
+                </p>
+
+                <div class="principle">
+
+                    Faire progresser les équipes et les organisations
+                    avec exigence, méthode et bienveillance.
+
+                </div>
+
+            </div>
+
+
+            <div class="visual">
+
+                <img
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+                    alt="Équipe en accompagnement"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 2 — DOMAINES D'INTERVENTION
+========================================================= -->
+
+<section class="domains" id="domaines">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Nos expertises
+            </div>
+
+            <h2>
+                Nos domaines d'intervention
+            </h2>
+
+            <p>
+                Des interventions adaptées aux enjeux opérationnels
+                des entreprises et de leurs équipes.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- QUALITE -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    QUALITÉ
+                </h3>
+
+                <ul>
+
+                    <li>Création ou amélioration de grilles d'évaluation</li>
+                    <li>Audits qualité</li>
+                    <li>Analyse d'appels et d'interactions clients</li>
+                    <li>Contrôle de conformité</li>
+                    <li>Identification des erreurs récurrentes</li>
+                    <li>Analyse des causes de non-conformité</li>
+                    <li>Plans d'actions correctifs</li>
+                    <li>Suivi des indicateurs qualité</li>
+                    <li>Amélioration continue</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- FORMATION -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ★
+                </div>
+
+                <h3>
+                    FORMATION & COACHING
+                </h3>
+
+                <ul>
+
+                    <li>Analyse des besoins de formation</li>
+                    <li>Conception de parcours de formation</li>
+                    <li>Formation initiale et continue</li>
+                    <li>Accompagnement des nouvelles recrues</li>
+                    <li>Coaching individuel ou collectif</li>
+                    <li>Accompagnement des superviseurs et coachs</li>
+                    <li>Ateliers de montée en compétences</li>
+                    <li>Évaluation des acquis</li>
+                    <li>Accompagnement post-formation</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- PERFORMANCE -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ↗
+                </div>
+
+                <h3>
+                    PERFORMANCE & EXPÉRIENCE CLIENT
+                </h3>
+
+                <ul>
+
+                    <li>Diagnostic des processus</li>
+                    <li>Identification des irritants</li>
+                    <li>Analyse des dysfonctionnements</li>
+                    <li>Amélioration des pratiques opérationnelles</li>
+                    <li>Analyse des indicateurs</li>
+                    <li>Amélioration de l'expérience client</li>
+                    <li>Plans d'amélioration continue</li>
+                    <li>Accompagnement dans la mise en œuvre</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- IMAGE LOUPE / CHECKLIST -->
+
+        <div style="margin-top:50px;" class="visual">
+
+            <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85"
+                alt="Analyse qualité et tableau de suivi"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 3 — A QUI NOUS NOUS ADRESSONS
+========================================================= -->
+
+<section id="cibles">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Nos clients
+            </div>
+
+            <h2>
+                À qui nous nous adressons ?
+            </h2>
+
+            <p>
+                QualiTiana Solutions accompagne principalement
+                les organisations qui souhaitent structurer leurs
+                pratiques et développer leurs équipes.
+            </p>
+
+        </div>
+
+
+        <div class="target-grid">
+
+
+            <div class="target-card">
+
+                <h3>
+                    Centres de contacts & BPO
+                </h3>
+
+                <ul>
+
+                    <li>Relation client</li>
+                    <li>Télévente</li>
+                    <li>Service client</li>
+                    <li>Back-office</li>
+                    <li>Équipes de gestion</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="target-card">
+
+                <h3>
+                    Assurance
+                </h3>
+
+                <ul>
+
+                    <li>Compagnies d'assurance</li>
+                    <li>Intermédiaires</li>
+                    <li>Souscription</li>
+                    <li>Gestion</li>
+                    <li>Relation client</li>
+                    <li>Conformité</li>
+                    <li>Qualité des opérations</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="target-card">
+
+                <h3>
+                    PME & entreprises de services
+                </h3>
+
+                <ul>
+
+                    <li>Équipes commerciales</li>
+                    <li>Service client</li>
+                    <li>Équipes administratives</li>
+                    <li>Structuration</li>
+                    <li>Développement</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- IMAGE EQUIPE REUNION -->
+
+        <div style="margin-top:50px;" class="visual">
+
+            <img
+                src="https://images.unsplash.com/photo-1524751639497-136a25d6f0d8?auto=format&fit=crop&w=1600&q=85"
+                alt="Professionnels en réunion"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 4 — NOTRE APPROCHE
+========================================================= -->
+
+<section class="approach" id="approche">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Notre méthode
+            </div>
+
+            <h2>
+                Notre approche
+            </h2>
+
+            <p>
+                Une démarche structurée en quatre étapes pour transformer
+                les constats en améliorations durables.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    DIAGNOSTIQUER
+                </h3>
+
+                <p>
+                    Comprendre l'organisation, les pratiques,
+                    les résultats et les difficultés rencontrées.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    ANALYSER
+                </h3>
+
+                <p>
+                    Identifier les causes réelles des écarts et
+                    distinguer les problèmes de compétence,
+                    de processus, d'outils ou d'organisation.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    ACCOMPAGNER
+                </h3>
+
+                <p>
+                    Construire avec les équipes des solutions
+                    adaptées et les accompagner dans leur mise
+                    en œuvre.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    MESURER
+                </h3>
+
+                <p>
+                    Suivre les résultats et mesurer l'évolution
+                    afin d'inscrire les améliorations dans la durée.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- IMAGE PLANTE -->
+
+        <div style="margin-top:50px;" class="visual">
+
+            <img
+                src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1600&q=85"
+                alt="Croissance progressive"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 5 — NOS OFFRES
+========================================================= -->
+
+<section id="offres">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Nos solutions
+            </div>
+
+            <h2>
+                Nos offres
+            </h2>
+
+        </div>
+
+
+        <div class="offer-grid">
+
+
+            <!-- OFFRE 1 -->
+
+            <div class="offer">
+
+                <div class="offer-number">
+                    Offre 01
+                </div>
+
+                <h3>
+                    DIAGNOSTIC QUALITÉ
+                </h3>
+
+                <p>
+                    Une intervention courte permettant à l'entreprise
+                    d'obtenir une vision claire de son niveau de qualité
+                    et de ses principales pistes d'amélioration.
+                </p>
+
+                <br>
+
+                <ul>
+
+                    <li>Analyse d'un échantillon d'interactions</li>
+                    <li>Analyse des écarts</li>
+                    <li>Identification des causes principales</li>
+                    <li>Analyse des pratiques</li>
+                    <li>Restitution</li>
+                    <li>Recommandations</li>
+                    <li>Plan d'actions priorisé</li>
+
+                </ul>
+
+                <div class="objective">
+                    <strong>Objectif :</strong>
+                    savoir précisément où agir et pourquoi.
+                </div>
+
+            </div>
+
+
+            <!-- OFFRE 2 -->
+
+            <div class="offer">
+
+                <div class="offer-number">
+                    Offre 02
+                </div>
+
+                <h3>
+                    FORMATION & COACHING
+                </h3>
+
+                <p>
+                    Un accompagnement destiné à renforcer les compétences
+                    des collaborateurs et des managers de proximité.
+                </p>
+
+                <br>
+
+                <ul>
+
+                    <li>Formation</li>
+                    <li>Ateliers pratiques</li>
+                    <li>Coaching</li>
+                    <li>Accompagnement des nouveaux collaborateurs</li>
+                    <li>Montée en compétences</li>
+                    <li>Accompagnement des coachs et superviseurs</li>
+                    <li>Évaluation des acquis</li>
+
+                </ul>
+
+                <div class="objective">
+                    <strong>Objectif :</strong>
+                    transformer les compétences en performance opérationnelle.
+                </div>
+
+            </div>
+
+
+            <!-- OFFRE 3 -->
+
+            <div class="offer">
+
+                <div class="offer-number">
+                    Offre 03
+                </div>
+
+                <h3>
+                    ACCOMPAGNEMENT QUALITÉ & PERFORMANCE
+                </h3>
+
+                <p>
+                    Un accompagnement plus complet pour les entreprises
+                    souhaitant structurer ou faire évoluer leur dispositif
+                    Qualité & Formation.
+                </p>
+
+                <br>
+
+                <ul>
+
+                    <li>Diagnostic initial</li>
+                    <li>Structuration du dispositif qualité</li>
+                    <li>Indicateurs et tableaux de bord</li>
+                    <li>Accompagnement des équipes</li>
+                    <li>Formation</li>
+                    <li>Coaching</li>
+                    <li>Plans d'amélioration</li>
+                    <li>Suivi des résultats</li>
+
+                </ul>
+
+                <div class="objective">
+                    <strong>Objectif :</strong>
+                    installer une démarche d'amélioration continue durable.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- IMAGE HUB -->
+
+        <div style="margin-top:50px;" class="visual">
+
+            <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85"
+                alt="Collaboration et performance"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 6 — CE QUI NOUS DIFFERENCIE
+========================================================= -->
+
+<section class="difference" id="difference">
+
+    <div class="section-container">
+
+        <div class="difference-text">
+
+            <div class="section-label">
+                Notre valeur ajoutée
+            </div>
+
+            <h2>
+                Ce qui nous différencie
+            </h2>
+
+            <p>
+                QualiTiana Solutions ne se positionne pas uniquement
+                comme un organisme de contrôle ou de formation.
+            </p>
+
+            <br>
+
+            <p>
+                Notre approche cherche à créer un lien entre
+                les différents leviers qui contribuent à la
+                performance d'une organisation.
+            </p>
+
+        </div>
+
+
+        <!-- CHAINE -->
+
+        <div class="chain">
+
+            <span>Qualité</span>
+
+            <strong>→</strong>
+
+            <span>Compétences</span>
+
+            <strong>→</strong>
+
+            <span>Processus</span>
+
+            <strong>→</strong>
+
+            <span>Performance</span>
+
+            <strong>→</strong>
+
+            <span>Expérience Client</span>
+
+        </div>
+
+
+        <p>
+            Nous considérons qu'un écart qualité n'est pas
+            systématiquement un problème individuel.
+        </p>
+
+
+        <div class="causes">
+
+            <div class="cause">
+                Procédure peu claire
+            </div>
+
+            <div class="cause">
+                Manque de formation
+            </div>
+
+            <div class="cause">
+                Outil mal adapté
+            </div>
+
+            <div class="cause">
+                Information insuffisante
+            </div>
+
+            <div class="cause">
+                Organisation perfectible
+            </div>
+
+            <div class="cause">
+                Compétence à renforcer
+            </div>
+
+        </div>
+
+
+        <br><br>
+
+        <p>
+            C'est pourquoi nous privilégions une approche factuelle,
+            pédagogique et orientée solutions.
+        </p>
+
+
+        <!-- IMAGE PONT -->
+
+        <div style="margin-top:50px;" class="visual">
+
+            <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=85"
+                alt="Lien entre humain et performance"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-box">
+
+        <div class="section-label">
+            Parlons de votre projet
+        </div>
+
+        <h2>
+            Construisons ensemble<br>
+            une performance durable.
+        </h2>
+
+        <p>
+            Vous souhaitez améliorer votre qualité, développer
+            vos équipes ou structurer votre démarche de performance ?
+            Échangeons sur vos enjeux.
+        </p>
+
+        <a href="mailto:contact@qualitiana-solutions.com"
+           class="btn btn-primary">
+
+            Nous contacter
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+
+            <div class="footer-brand">
+                QUALITIANA SOLUTIONS
+            </div>
+
+            <div class="footer-small">
+                Qualité • Formation • Performance • Expérience Client
+            </div>
+
+        </div>
+
+        <div class="footer-small">
+
+            © 2026 QualiTiana Solutions — Tous droits réservés
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
